@@ -1,0 +1,49 @@
+template:
+  name: DeolyStage14Dec
+  identifier: DeolyStage14Dec
+  versionLabel: v1
+  type: Stage
+  projectIdentifier: AmitTest
+  orgIdentifier: GitXOrg
+  tags: {}
+  spec:
+    type: Deployment
+    spec:
+      serviceConfig:
+        serviceRef: abc
+        serviceDefinition:
+          spec:
+            variables: []
+          type: NativeHelm
+      infrastructure:
+        environmentRef: preqa
+        infrastructureDefinition:
+          type: KubernetesGcp
+          spec:
+            connectorRef: <+input>
+            cluster: <+input>
+            namespace: <+input>
+            releaseName: release-<+INFRA_KEY>
+        allowSimultaneousDeployments: false
+      execution:
+        steps:
+          - step:
+              name: Helm Deployment
+              identifier: helmDeployment
+              type: HelmDeploy
+              timeout: 10m
+              spec:
+                skipDryRun: false
+        rollbackSteps:
+          - step:
+              name: Helm Rollback
+              identifier: helmRollback
+              type: HelmRollback
+              timeout: 10m
+              spec: {}
+    failureStrategies:
+      - onFailure:
+          errors:
+            - AllErrors
+          action:
+            type: StageRollback
