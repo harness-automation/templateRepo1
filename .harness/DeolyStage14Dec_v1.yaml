@@ -4,7 +4,7 @@ template:
   versionLabel: v1
   type: Stage
   projectIdentifier: AmitTest
-  orgIdentifier: GitXOrg
+  orgIdentifier: default
   tags: {}
   spec:
     type: Deployment
