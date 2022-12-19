@@ -1,0 +1,14 @@
+template:
+  name: Helm Deploy
+  identifier: Helm_Deploy
+  versionLabel: "1"
+  type: Step
+  projectIdentifier: AmitTest
+  orgIdentifier: default
+  tags: {}
+  spec:
+    timeout: 10m
+    type: HelmDeploy
+    spec:
+      skipDryRun: false
+      ignoreReleaseHistFailStatus: false
