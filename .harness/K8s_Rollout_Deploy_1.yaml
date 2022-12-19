@@ -1,0 +1,14 @@
+template:
+  name: K8s Rollout Deploy
+  identifier: K8s_Rollout_Deploy
+  versionLabel: "1"
+  type: Step
+  projectIdentifier: AmitTest
+  orgIdentifier: default
+  tags: {}
+  spec:
+    type: K8sRollingDeploy
+    timeout: 10m
+    spec:
+      skipDryRun: false
+      pruningEnabled: false
