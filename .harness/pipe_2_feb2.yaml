@@ -64,7 +64,7 @@ pipeline:
                     source:
                       type: Inline
                       spec:
-                        script: <+input>
+                        script: echo 'check2'
                     environmentVariables: []
                     outputVariables: []
                   timeout: <+input>
