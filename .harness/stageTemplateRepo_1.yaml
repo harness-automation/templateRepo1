@@ -21,7 +21,7 @@ template:
                 source:
                   type: Inline
                   spec:
-                    script: <+input>
+                    script: echo 'check1'
                 environmentVariables: []
                 outputVariables: []
               timeout: 10m
