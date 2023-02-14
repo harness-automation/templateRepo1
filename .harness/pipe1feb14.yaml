@@ -1,0 +1,31 @@
+pipeline:
+  name: pipe1feb14
+  identifier: pipe1feb14
+  projectIdentifier: TestAmit
+  orgIdentifier: Simlified_Git_sync
+  tags: {}
+  stages:
+    - stage:
+        name: S1
+        identifier: S1
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: ShellScript
+                  name: Shell Script_1
+                  identifier: ShellScript_1
+                  spec:
+                    shell: Bash
+                    onDelegate: true
+                    source:
+                      type: Inline
+                      spec:
+                        script: |
+                          echo 'hi'
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 10m
+        tags: {}
