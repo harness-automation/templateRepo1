@@ -6,7 +6,7 @@ pipeline:
   tags: {}
   stages:
     - stage:
-        name: S23
+        name: S23445
         identifier: S23
         description: ""
         type: Pipeline
@@ -31,3 +31,4 @@ pipeline:
                                 type: Inline
                                 spec:
                                   script: <+input>
+        tags: {}
