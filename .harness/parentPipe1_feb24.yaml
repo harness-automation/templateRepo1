@@ -1,0 +1,33 @@
+pipeline:
+  name: parentPipe1 feb24
+  identifier: parentPipe1_feb24
+  projectIdentifier: TestAmit
+  orgIdentifier: Simlified_Git_sync
+  tags: {}
+  stages:
+    - stage:
+        name: S23
+        identifier: S23
+        description: ""
+        type: Pipeline
+        spec:
+          org: testChaining
+          pipeline: childpipe2_24feb
+          project: Test1
+          inputs:
+            identifier: childpipe2_24feb
+            stages:
+              - stage:
+                  identifier: S1
+                  type: Custom
+                  spec:
+                    execution:
+                      steps:
+                        - step:
+                            identifier: ShellScript_1
+                            type: ShellScript
+                            spec:
+                              source:
+                                type: Inline
+                                spec:
+                                  script: <+input>
