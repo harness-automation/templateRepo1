@@ -1,0 +1,26 @@
+pipeline:
+  name: PipelineRemote
+  identifier: PipelineRemote
+  template:
+    templateRef: PipelineTemplateTemp
+    versionLabel: PipelineTemplateTemp
+    templateInputs:
+      stages:
+        - stage:
+            identifier: StageTemplateTest
+            template:
+              templateInputs:
+                type: Custom
+                spec:
+                  execution:
+                    steps:
+                      - step:
+                          identifier: WaitStepViaTemplate
+                          template:
+                            templateInputs:
+                              type: Wait
+                              spec:
+                                duration: <+input>
+  tags: {}
+  projectIdentifier: Temp1
+  orgIdentifier: default
