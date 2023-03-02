@@ -1,0 +1,12 @@
+template:
+  name: StepTemplateTemp
+  identifier: StepTemplateTemp
+  versionLabel: StepTemplateTemp
+  type: Step
+  projectIdentifier: Temp1
+  orgIdentifier: default
+  tags: {}
+  spec:
+    type: Wait
+    spec:
+      duration: <+input>
