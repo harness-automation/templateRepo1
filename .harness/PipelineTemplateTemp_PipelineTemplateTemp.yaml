@@ -1,0 +1,28 @@
+template:
+  name: PipelineTemplateTemp
+  identifier: PipelineTemplateTemp
+  versionLabel: PipelineTemplateTemp
+  type: Pipeline
+  projectIdentifier: Temp1
+  orgIdentifier: default
+  tags: {}
+  spec:
+    stages:
+      - stage:
+          name: StageTemplateTest
+          identifier: StageTemplateTest
+          template:
+            templateRef: StageTemplateTest
+            versionLabel: StageTemplateTest
+            templateInputs:
+              type: Custom
+              spec:
+                execution:
+                  steps:
+                    - step:
+                        identifier: WaitStepViaTemplate
+                        template:
+                          templateInputs:
+                            type: Wait
+                            spec:
+                              duration: <+input>
