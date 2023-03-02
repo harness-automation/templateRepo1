@@ -1,0 +1,23 @@
+template:
+  name: StageTemplateTest
+  identifier: StageTemplateTest
+  versionLabel: StageTemplateTest
+  type: Stage
+  projectIdentifier: Temp1
+  orgIdentifier: default
+  tags: {}
+  spec:
+    type: Custom
+    spec:
+      execution:
+        steps:
+          - step:
+              name: WaitStepViaTemplate
+              identifier: WaitStepViaTemplate
+              template:
+                templateRef: StepTemplateTemp
+                versionLabel: StepTemplateTemp
+                templateInputs:
+                  type: Wait
+                  spec:
+                    duration: <+input>
