@@ -1,0 +1,16 @@
+template:
+  name: stepCheckBatch mar8
+  identifier: stepCheckBatch_mar8
+  versionLabel: "1"
+  type: Step
+  projectIdentifier: AmitTest
+  orgIdentifier: default
+  tags: {}
+  spec:
+    type: Run
+    spec:
+      connectorRef: <+input>
+      image: <+input>
+      shell: Sh
+      command: <+input>
+    description: <+input>
