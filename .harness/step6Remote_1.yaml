@@ -1,0 +1,18 @@
+template:
+  name: step6Remote
+  identifier: step6Remote
+  versionLabel: "1"
+  type: Step
+  tags: {}
+  spec:
+    timeout: <+input>
+    type: ShellScript
+    spec:
+      shell: Bash
+      onDelegate: true
+      source:
+        type: Inline
+        spec:
+          script: <+input>
+      environmentVariables: []
+      outputVariables: []
