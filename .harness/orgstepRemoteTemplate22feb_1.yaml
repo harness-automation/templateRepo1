@@ -1,0 +1,19 @@
+template:
+  name: orgstepRemoteTemplate22feb
+  type: Step
+  orgIdentifier: Pipelines_NonK8s_Org_NG
+  spec:
+    type: ShellScript
+    spec:
+      shell: Bash
+      executionTarget: {}
+      source:
+        type: Inline
+        spec:
+          script: exit 1
+      environmentVariables: []
+      outputVariables: []
+      delegateSelectors: []
+    timeout: 10m
+  identifier: orgstepRemoteTemplate22feb
+  versionLabel: "1"
