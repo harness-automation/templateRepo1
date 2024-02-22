@@ -29,3 +29,5 @@ template:
               identifier: Wait_1
               spec:
                 duration: 10s
+    when:
+      pipelineStatus: All
