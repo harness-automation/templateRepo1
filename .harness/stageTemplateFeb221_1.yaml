@@ -1,0 +1,31 @@
+template:
+  name: stageTemplateFeb22-1
+  identifier: stageTemplateFeb221
+  versionLabel: "1"
+  type: Stage
+  tags: {}
+  spec:
+    type: Custom
+    spec:
+      execution:
+        steps:
+          - step:
+              name: step1
+              identifier: step1
+              template:
+                templateRef: account.accountStepTemplate22Feb1
+                versionLabel: "1"
+                gitBranch: main-patch
+          - step:
+              name: step2
+              identifier: step2
+              template:
+                templateRef: account.accountStepTemplate22Feb
+                versionLabel: "1"
+                gitBranch: main-patch
+          - step:
+              type: Wait
+              name: Wait_1
+              identifier: Wait_1
+              spec:
+                duration: 10s
