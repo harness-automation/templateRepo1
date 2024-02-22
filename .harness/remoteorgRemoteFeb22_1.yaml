@@ -53,3 +53,5 @@ template:
                     templateRef: account.accountStepTemplate22Feb
                     versionLabel: "1"
                     gitBranch: main-patch
+    when:
+      pipelineStatus: All
