@@ -1,0 +1,55 @@
+template:
+  name: remoteorgRemoteFeb22
+  identifier: remoteorgRemoteFeb22
+  versionLabel: "1"
+  type: Stage
+  orgIdentifier: Pipelines_NonK8s_Org_NG
+  tags: {}
+  spec:
+    type: Custom
+    spec:
+      execution:
+        steps:
+          - step:
+              name: ShellScript_1
+              identifier: ShellScript_1
+              template:
+                templateRef: org.orgstepRemoteTemplate22feb
+                versionLabel: "1"
+                gitBranch: main-patch
+          - parallel:
+              - step:
+                  name: s2
+                  identifier: s2
+                  template:
+                    templateRef: account.accountStepTemplate22Feb1
+                    versionLabel: "1"
+                    gitBranch: main-patch
+              - step:
+                  name: s4
+                  identifier: s4
+                  template:
+                    templateRef: account.accountStepTemplate22Feb1
+                    versionLabel: "1"
+                    gitBranch: main-patch
+              - step:
+                  type: Wait
+                  name: Wait_1
+                  identifier: Wait_1
+                  spec:
+                    duration: 10s
+          - parallel:
+              - step:
+                  name: s3
+                  identifier: s3
+                  template:
+                    templateRef: account.accountStepTemplate22Feb
+                    versionLabel: "1"
+                    gitBranch: main-patch
+              - step:
+                  name: s5
+                  identifier: s5
+                  template:
+                    templateRef: account.accountStepTemplate22Feb
+                    versionLabel: "1"
+                    gitBranch: main-patch
